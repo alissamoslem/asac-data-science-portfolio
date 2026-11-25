@@ -295,6 +295,17 @@ The design prioritizes readability, visual consistency, and business usability.
 4. Use the slicers to explore the available data.
 5. If refreshing the report, configure the required source data connections.
 
+## Source Code
+
+The following files provide direct access to the
+report's analytical calculations and data cleaning
+logic without requiring Power BI Desktop.
+
+| File | Description |
+|---|---|
+| [DAX Measures](./dax/measures.dax) | All nine DAX measures used in the dashboard |
+| [Power Query M](./power-query/data_cleaning.pq) | Data cleaning and transformation of the trips table |
+
 ## What I Learned
 
 Through this project, I developed practical experience in:
