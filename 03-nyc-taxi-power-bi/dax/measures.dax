@@ -1,0 +1,35 @@
+DEFINE
+    MEASURE 'trips'[Trips] = COUNTROWS(trips)
+    MEASURE 'trips'[Revenue] = SUM(trips[total_amount])
+    MEASURE 'trips'[Average per Trip] = DIVIDE([Revenue],trips[Trips])
+    MEASURE 'trips'[Trips LY] = CALCULATE(
+    trips[Trips],
+    SAMEPERIODLASTYEAR(dates[date])
+)
+    MEASURE 'trips'[Trips YoY %] = DIVIDE(trips[Trips]-trips[Trips LY], trips[Trips LY])
+    MEASURE 'trips'[Revenue YTD] = TOTALYTD(
+    [Revenue],
+    dates[date]
+)
+    MEASURE 'trips'[% of Trips] = DIVIDE(
+    [Trips],
+    CALCULATE(
+        [Trips],
+        REMOVEFILTERS(zones)
+    )
+)
+    MEASURE 'trips'[Dropoff Trips] = CALCULATE(trips[Trips],USERELATIONSHIP(trips[DOLocationID],zones[LocationID]))
+    MEASURE 'trips'[Card Tip %] = CALCULATE(DIVIDE(SUM(trips[tip_amount]),SUM(trips[fare_amount])),payment_types[payment_name] = "Credit card")
+
+EVALUATE
+    SUMMARIZECOLUMNS(
+        "Trips", [Trips],
+        "Revenue", [Revenue],
+        "Average per Trip", [Average per Trip],
+        "Trips LY", [Trips LY],
+        "Trips YoY %", [Trips YoY %],
+        "Revenue YTD", [Revenue YTD],
+        "% of Trips", [% of Trips],
+        "Dropoff Trips", [Dropoff Trips],
+        "Card Tip %", [Card Tip %]
+    )
