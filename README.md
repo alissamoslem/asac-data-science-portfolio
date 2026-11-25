@@ -1,3 +1,12 @@
+<div align="center">
+
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0F172A,100:0369A1&height=220&section=header&text=ASAC%20Data%20Science&fontSize=40&fontColor=ffffff&desc=Portfolio%20%7C%20Moslem%20Al-Issa&descSize=18&descAlignY=65" width="100%"/>
+
+  <h3>Transforming Raw Data into Actionable Insights</h3>
+
+  <p>Data Analytics | Machine Learning | Business Intelligence</p>
+
+</div>
 # ASAC Data Science Portfolio
 
 ![SQL](https://img.shields.io/badge/SQL-025E8C?style=for-the-badge)
