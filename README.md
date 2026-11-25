@@ -111,4 +111,4 @@ These projects were developed for educational purposes. Findings are based on th
 
 ---
 
-*This repository will continue to grow as I develop new skills and complete additional projects during my data science journey.*
+*This repository will continue to grow as I develop new skills and complete additional projects during my learning journey.*
